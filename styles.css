@@ -1,0 +1,14 @@
+.timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 450px;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: 400;
+    align-items: center;
+    color: rgb(29, 29, 29);
+}
+
+.value {
+   margin-left: 50px; 
+}
