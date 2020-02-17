@@ -1,9 +1,13 @@
 "use strict";
 
-const CountdownTimer = {
+class CountdownTimer {
+  constructor({selector, targetDate}) {
+    this.selector = selector;
+    
+    this.targetDate = targetDate;
+  }
   start() {
-    this.targetDate = new Date("Jul 17, 2020");
-    this.timerId = setInterval(() => {
+      setInterval(() => {
       this.currentTime = Date.now();
       this.time = this.targetDate - this.currentTime;
       this.days = Math.floor(this.time / (1000 * 60 * 60 * 24));
@@ -24,7 +28,12 @@ const CountdownTimer = {
   }
 };
 
-CountdownTimer.start();
+const timer = new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Jul 17, 2020'),
+});
+
+timer.start();
 
 function pad(value) {
   return String(value).padStart(2, "0");
